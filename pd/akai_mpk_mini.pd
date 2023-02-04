@@ -1,0 +1,35 @@
+#N canvas 73 26 1846 984 12;
+#X obj 10 17 cnv 15 1500 760 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 126 82 cnv 15 100 100 empty empty empty 20 12 0 14 #000000 #404040
+0;
+#X obj 245 82 cnv 15 100 100 empty empty empty 20 12 0 14 #000000 #404040
+0;
+#X obj 359 83 cnv 15 100 100 empty empty empty 20 12 0 14 #000000 #404040
+0;
+#X obj 478 83 cnv 15 100 100 empty empty empty 20 12 0 14 #000000 #404040
+0;
+#X obj 126 198 cnv 15 100 100 empty empty empty 20 12 0 14 #000000
+#404040 0;
+#X obj 245 198 cnv 15 100 100 empty empty empty 20 12 0 14 #000000
+#404040 0;
+#X obj 359 199 cnv 15 100 100 empty empty empty 20 12 0 14 #000000
+#404040 0;
+#X obj 478 199 cnv 15 100 100 empty empty empty 20 12 0 14 #000000
+#404040 0;
+#X obj 771 27 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 930 27 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 1084 28 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 1243 28 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 772 190 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 931 190 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 1085 191 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 1244 191 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;

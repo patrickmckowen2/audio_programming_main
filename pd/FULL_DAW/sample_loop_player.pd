@@ -1,0 +1,66 @@
+#N canvas 454 188 878 822 12;
+#X obj 26 181 inlet;
+#X obj 26 206 openpanel;
+#X obj 25 295 pack a a;
+#X obj 25 345 soundfiler;
+#X obj 25 395 tabplay~ \$0-a;
+#X obj 25 420 outlet~;
+#X obj 182 190 inlet;
+#X obj 131 230 sel 1;
+#X obj 58 266 symbol \$0-a;
+#X obj 26 238 t a b;
+#X obj 129 448 spigot 1;
+#X obj 130 424 t b;
+#X text 268 711 https://tuftsdev.github.io/MusicAppsOnTheIpad/readings/reading3.pdf
+;
+#X obj 88 370 table \$0-a;
+#X text 268 757 https://archive.flossmanuals.net/pure-data/dataflow-tutorials/arrays-graphs-tables.html
+;
+#X text 23 492 ch 3 fig 7.18;
+#X text 250 113 A looping sample player is useful in many situations
+\, to create a texture from looped background samples \, or to provide
+a beat from a drum loop \, especially if you need a continuous sound
+to test some process with. In Fig. 7.18 we see a patch that should
+be created as an abstraction so that many can be instantiated if required.
+Itâs operation is unsophisticated \, just playing a loop of a
+sound file forever. When the abstraction receives a bang openpanel
+is activated and provides a nice file dialogue for you to choose a
+sound file. You should pick a Microsoft .wav or Mac .aiff type \, either
+stereo or mono will do but this player patch will only give mono output.
+The name and path of this file is passed through the trigger âanyâ
+outlet and packed as the first part of a list along with a second part
+which is a symbol \$0-a. The second symbol is the name of our storage
+table \, the place in memory where the contents of the soundfile will
+be put once read. It has the prefix $- to give it local scope so we
+can have many sample loop players in a patch. Now the elements of the
+list will be substituted in \$1 and \$2 of the message read -resize
+\$1 \$2 \, which forms a complete command to soundfiler telling it
+to read in a sound file and put it in an array resizing the array as
+required. Once this operation is complete soundfiler returns the number
+of bytes read \, which in this case we ignore and simply trigger a
+new bang message to start tabplay~ . Notice the argument is the name
+of the array living in the table just above it. tabplay~ will now play
+once through the file at its original sample rate \, so there is no
+need to tune it. When it has finished \, the right outlet emits a bang.
+We take this bang \, buffering it through another trigger and apply
+it back to tthe tabplay~ inlet \, which means it plays the sound forever
+in a loop. A zero arriving at the second inlet allows you to stop the
+loop playing., f 88;
+#X msg 25 322 read -resize \$1 \$2;
+#X msg 24 370 bang;
+#X connect 0 0 1 0;
+#X connect 1 0 9 0;
+#X connect 2 0 17 0;
+#X connect 3 0 18 0;
+#X connect 4 0 5 0;
+#X connect 4 1 11 0;
+#X connect 6 0 7 0;
+#X connect 6 0 10 1;
+#X connect 7 0 18 0;
+#X connect 8 0 2 1;
+#X connect 9 0 2 0;
+#X connect 9 1 8 0;
+#X connect 10 0 4 0;
+#X connect 11 0 10 0;
+#X connect 17 0 3 0;
+#X connect 18 0 4 0;

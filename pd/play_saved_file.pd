@@ -1,0 +1,18 @@
+#N canvas 943 129 808 471 12;
+#X msg 113 114 start;
+#X msg 122 139 stop;
+#X obj 42 185 readsf~ 2;
+#X msg 31 83 open ~/Music/PinkPanther60.wav;
+#X obj 26 260 *~ 0.7;
+#X obj 98 258 *~ 0.7;
+#X obj 208 232 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 31 345 dac~;
+#X connect 0 0 2 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 2 0 5 0;
+#X connect 2 2 6 0;
+#X connect 3 0 2 0;
+#X connect 4 0 7 0;
+#X connect 5 0 7 1;
